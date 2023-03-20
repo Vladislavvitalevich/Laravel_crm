@@ -14,7 +14,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+//    return view('welcome');
+
+
+    $user = App\User::find(1);
+    dd($user->hasRole('super-admin')); //вернёт true
 });
 
 Auth::routes();

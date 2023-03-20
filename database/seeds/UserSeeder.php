@@ -14,7 +14,7 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        $super_admin = Role::where('slug','super_admin')->first();
+        $superAdmin = Role::where('slug','super-admin')->first();
         $manageUsers = Permission::where('slug','manage-users')->first();
 
         $user1 = new User();
@@ -22,7 +22,7 @@ class UserSeeder extends Seeder
         $user1->email = 'admin@local.in';
         $user1->password = bcrypt('password');
         $user1->save();
-        $user1->roles()->attach($super_admin);
+        $user1->roles()->attach($superAdmin);
         $user1->permissions()->attach($manageUsers);
 
         $user2 = new User();
