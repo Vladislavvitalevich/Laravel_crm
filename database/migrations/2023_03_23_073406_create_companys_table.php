@@ -15,6 +15,11 @@ class CreateCompanysTable extends Migration
     {
         Schema::create('companys', function (Blueprint $table) {
             $table->id();
+            $table->text('name', 255);
+            $table->text('email', 255 );
+            $table->text('phone', 50);
+            $table->text('website');
+            $table->text('logo', 255); // 100x100 px
             $table->timestamps();
         });
     }
