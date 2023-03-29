@@ -20,17 +20,24 @@
                                 <div class="w-100 my-2"></div>
                                 <label class="col-sm-auto" for="inlineFormCustomSelect">Громада</label>
                                 <select class="custom-select col-2" id="inlineFormCustomSelect">
-                                    <option selected>Choose...</option>
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
-                                    <option value="3">Three</option>
-                                    <option value="3">Three</option>
-                                    <option value="3">Three</option>
-                                    <option value="3">Three</option>
-                                    <option value="3">Three</option>
-                                    <option value="3">Three</option>
-                                    <option value="3">Three</option>
+                                    <option selected>м. Мелітополь</option>
+                                    <option disabled>Виберыть громаду</option>
+                                    <option >Мирненська</option>
+                                    <option >Новоуспенівська</option>
+                                    <option >Семенівська</option>
+                                    <option >Кирилівська</option>
+                                    <option >Новобогданівська</option>
+                                    <option >Приазовська</option>
+                                    <option >Новенська</option>
+                                    <option >Якимівська</option>
+                                    <option >Терпіннівська</option>
+                                    <option >Костянтинівська</option>
+                                    <option >Веселівська</option>
+                                    <option >Чкаловська</option>
+                                    <option >Нововасилівська</option>
+                                    <option >Олександрівська</option>
+                                    <option >Плодородненська</option>
+                                    <option >Інше</option>
                                 </select>
 
                                 <label for="inputEmail3" class="col-sm-auto col-form-label " >Дата заповнення</label>
@@ -65,17 +72,11 @@
                                     </td>
                                     <td class="pt-1">
                                         <select class="custom-select" id="inlineFormCustomSelect">
-                                            <option selected>Choose...</option>
-                                            <option value="1">One</option>
-                                            <option value="2">Two</option>
-                                            <option value="3">Three</option>
-                                            <option value="3">Three</option>
-                                            <option value="3">Three</option>
-                                            <option value="3">Three</option>
-                                            <option value="3">Three</option>
-                                            <option value="3">Three</option>
-                                            <option value="3">Three</option>
-                                            <option value="3">Three</option>
+                                            <option >Інше</option>
+                                            <option >Інше</option>
+                                            <option >Інше</option>
+                                            <option >Інше</option>
+                                            <option >Інше</option>
                                         </select>
                                     </td>
                                     <td class="pt-1">
