@@ -25,4 +25,9 @@ class FormController extends Controller
     {
         return view('forms.first_form');
     }
+
+    public function create(Request $request)
+    {
+        dd($request->all());
+    }
 }
