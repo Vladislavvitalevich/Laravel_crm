@@ -5,21 +5,24 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <form>
+                    <form method="POST" action="{{route('form.store')}}" >
+                        @csrf
                         <div class="card-header">
                             <div class="form-group row">
-                                <label for="inputEmail3" class="col-sm-auto col-form-label">В/ч (формування) </label>
+                                <label for="shaping" class="col-sm-auto col-form-label">В/ч (формування) </label>
                                 <div class="col-sm-auto">
-                                    <input type="text" class="form-control" placeholder="">
+                                    <input type="text" class="form-control" name="formation" id="shaping" placeholder="">
                                 </div>
 
-                                <label for="inputEmail3" class="col-sm-auto col-form-label">Відповідальна особа</label>
-                                <div class="col-sm-auto">
-                                    <input type="text" class="form-control" placeholder="">
+                                <label for="responsible" class="col-sm-auto col-form-label">Відповідальна особа</label>
+                                <div class="col-sm">
+                                    <input type="text" class="form-control" name="responsible" id="responsible" placeholder="">
                                 </div>
+
                                 <div class="w-100 my-2"></div>
-                                <label class="col-sm-auto" for="inlineFormCustomSelect">Громада</label>
-                                <select class="custom-select col-2" id="inlineFormCustomSelect">
+
+                                <label class="col-sm-auto" for="community">Громада</label>
+                                <select class="custom-select col-sm-4" name="community" id="community">
                                     <option selected>м. Мелітополь</option>
                                     <option disabled>Виберыть громаду</option>
                                     <option >Мирненська</option>
@@ -40,14 +43,9 @@
                                     <option >Інше</option>
                                 </select>
 
-                                <label for="inputEmail3" class="col-sm-auto col-form-label " >Дата заповнення</label>
-                                <div class="col-sm-auto">
-                                    <input type="text" class="form-control" placeholder="">
-                                </div>
-
-                                <label for="inputEmail3" class="col-sm-auto col-form-label">№</label>
-                                <div class="col-sm-auto">
-                                    <input type="text" class="form-control" placeholder="First name">
+                                <label for="number" class="col-sm-auto col-form-label">№</label>
+                                <div class="col-sm">
+                                    <input type="text" name="number" id="number" class="form-control" placeholder="">
                                 </div>
                             </div>
 
@@ -55,38 +53,40 @@
 
                         <div class="card-body">
 
-                            <table class="table">
+                            <table class="table" id="form">
                                 <thead class="thead-light">
-                                <tr>
-                                    <th scope="col">#</th>
-                                    <th scope="col">Наіменування</th>
-                                    <th scope="col">Одиниці виміру</th>
-                                    <th scope="col">Кількість</th>
-                                </tr>
+                                    <tr>
+                                        <th scope="col">Наіменування</th>
+                                        <th scope="col">Одиниці виміру</th>
+                                        <th scope="col">Кількість</th>
+                                    </tr>
                                 </thead>
-                                <tbody>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td class="pt-1">
-                                        <input type="text" class="form-control m-0" placeholder="">
-                                    </td>
-                                    <td class="pt-1">
-                                        <select class="custom-select" id="inlineFormCustomSelect">
-                                            <option >Інше</option>
-                                            <option >Інше</option>
-                                            <option >Інше</option>
-                                            <option >Інше</option>
-                                            <option >Інше</option>
-                                        </select>
-                                    </td>
-                                    <td class="pt-1">
-                                        <input type="number" class="form-control" placeholder="">
-                                    </td>
-                                </tr>
+                                <tbody id="form_table_body">
+                                    <tr>
+                                        <td class="pt-1 border-top-0">
+                                            <input type="text" class="form-control m-0" name="name[]" placeholder="">
+                                        </td>
+                                        <td class="pt-1 border-top-0">
+                                            <select class="custom-select" name="units_measurement[]" id="">
+                                                <option >Шт.</option>
+                                                <option >м.</option>
+                                                <option >см.</option>
+                                                <option >км.</option>
+                                                <option >гр.</option>
+                                                <option >кг.</option>
+                                                <option >т.</option>
+                                                <option >мл.</option>
+                                                <option >л.</option>
+                                            </select>
+                                        </td>
+                                        <td class="pt-1 border-top-0">
+                                            <input type="number" class="form-control" name="count[]" placeholder="">
+                                        </td>
+                                    </tr>
                                 </tbody>
                             </table>
                             <div class="w-100">
-                                <button type="button" class="btn btn-outline-dark">Додати строку</button>
+                                <button type="button" class="btn btn-outline-dark" id="add" onclick="addTd();">Додати строку</button>
                             </div>
                         </div>
 
@@ -97,8 +97,8 @@
                             </div>
                             <div class="form-group text-right">
                                 <button type="submit" class="btn btn-outline-secondary ">Відправити</button>
-                                <button type="submit" class="btn btn-outline-secondary">Друкувати</button>
-                                <button type="submit" class="btn btn-outline-dark">Відмінити</button>
+{{--                                <button type="submit" class="btn btn-outline-secondary">Друкувати</button>--}}
+{{--                                <button type="submit" class="btn btn-outline-dark">Відмінити</button>--}}
                             </div>
 
                         </div>
@@ -108,4 +108,32 @@
             </div>
         </div>
     </div>
+
+    <script type="text/javascript">
+        function addTd(){
+
+            let form = document.getElementById('form_table_body');
+            form.insertAdjacentHTML('beforeend', ' <tr>' +
+                                                        '<td class="pt-1 border-top-0">' +
+                                                        '<input type="text" class="form-control m-0" name="name[]" placeholder="">' +
+                                                        '</td>' +
+                                                    '<td class="pt-1 border-top-0">' +
+                                                        '<select class="custom-select" id="inlineFormCustomSelect" name="units_measurement[]">'+
+                                                            '<option >Шт.</option>'+
+                                                            '<option >м.</option>' +
+                                                            '<option >см.</option>' +
+                                                            '<option >км.</option>' +
+                                                            '<option >гр.</option>' +
+                                                            '<option >кг.</option>' +
+                                                            '<option >т.</option>' +
+                                                            '<option >мл.</option>' +
+                                                            '<option >л.</option>' +
+                                                        '</select>' +
+                                                    '</td>' +
+                                                    '<td class="pt-1 border-top-0">'+
+                                                        '<input type="number" class="form-control" placeholder="" name="count[]">' +
+                                                    '</td>'+
+                                                  '</tr>');
+        };
+    </script>
 @endsection
