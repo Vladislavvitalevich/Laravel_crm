@@ -14,11 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-<<<<<<< Updated upstream
    return view('welcome');
-=======
-    return view('welcome');
->>>>>>> Stashed changes
 });
 
 Route::get('/home', 'HomeController@index')->name('home');

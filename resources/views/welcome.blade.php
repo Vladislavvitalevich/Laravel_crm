@@ -83,11 +83,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-<<<<<<< Updated upstream
                     Laravel User CRM
-=======
-                    CRM
->>>>>>> Stashed changes
                 </div>
 
 <!--                <div class="links">
