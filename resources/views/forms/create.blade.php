@@ -55,34 +55,34 @@
 
                             <table class="table" id="form">
                                 <thead class="thead-light">
-                                    <tr>
-                                        <th scope="col">Наіменування</th>
-                                        <th scope="col">Одиниці виміру</th>
-                                        <th scope="col">Кількість</th>
-                                    </tr>
+                                <tr>
+                                    <th scope="col">Наіменування</th>
+                                    <th scope="col">Одиниці виміру</th>
+                                    <th scope="col">Кількість</th>
+                                </tr>
                                 </thead>
                                 <tbody id="form_table_body">
-                                    <tr>
-                                        <td class="pt-1 border-top-0">
-                                            <input type="text" class="form-control m-0" name="name[]" placeholder="">
-                                        </td>
-                                        <td class="pt-1 border-top-0">
-                                            <select class="custom-select" name="units_measurement[]" id="">
-                                                <option >Шт.</option>
-                                                <option >м.</option>
-                                                <option >см.</option>
-                                                <option >км.</option>
-                                                <option >гр.</option>
-                                                <option >кг.</option>
-                                                <option >т.</option>
-                                                <option >мл.</option>
-                                                <option >л.</option>
-                                            </select>
-                                        </td>
-                                        <td class="pt-1 border-top-0">
-                                            <input type="number" class="form-control" name="count[]" placeholder="">
-                                        </td>
-                                    </tr>
+                                <tr>
+                                    <td class="pt-1 border-top-0">
+                                        <input type="text" class="form-control m-0" name="name[]" placeholder="">
+                                    </td>
+                                    <td class="pt-1 border-top-0">
+                                        <select class="custom-select" name="units_measurement[]" id="">
+                                            <option >Шт.</option>
+                                            <option >м.</option>
+                                            <option >см.</option>
+                                            <option >км.</option>
+                                            <option >гр.</option>
+                                            <option >кг.</option>
+                                            <option >т.</option>
+                                            <option >мл.</option>
+                                            <option >л.</option>
+                                        </select>
+                                    </td>
+                                    <td class="pt-1 border-top-0">
+                                        <input type="number" class="form-control" name="count[]" placeholder="">
+                                    </td>
+                                </tr>
                                 </tbody>
                             </table>
                             <div class="w-100">
@@ -97,8 +97,8 @@
                             </div>
                             <div class="form-group text-right">
                                 <button type="submit" class="btn btn-outline-secondary ">Відправити</button>
-{{--                                <button type="submit" class="btn btn-outline-secondary">Друкувати</button>--}}
-{{--                                <button type="submit" class="btn btn-outline-dark">Відмінити</button>--}}
+                                {{--                                <button type="submit" class="btn btn-outline-secondary">Друкувати</button>--}}
+                                {{--                                <button type="submit" class="btn btn-outline-dark">Відмінити</button>--}}
                             </div>
 
                         </div>
@@ -114,26 +114,26 @@
 
             let form = document.getElementById('form_table_body');
             form.insertAdjacentHTML('beforeend', ' <tr>' +
-                                                        '<td class="pt-1 border-top-0">' +
-                                                        '<input type="text" class="form-control m-0" name="name[]" placeholder="">' +
-                                                        '</td>' +
-                                                    '<td class="pt-1 border-top-0">' +
-                                                        '<select class="custom-select" id="inlineFormCustomSelect" name="units_measurement[]">'+
-                                                            '<option >Шт.</option>'+
-                                                            '<option >м.</option>' +
-                                                            '<option >см.</option>' +
-                                                            '<option >км.</option>' +
-                                                            '<option >гр.</option>' +
-                                                            '<option >кг.</option>' +
-                                                            '<option >т.</option>' +
-                                                            '<option >мл.</option>' +
-                                                            '<option >л.</option>' +
-                                                        '</select>' +
-                                                    '</td>' +
-                                                    '<td class="pt-1 border-top-0">'+
-                                                        '<input type="number" class="form-control" placeholder="" name="count[]">' +
-                                                    '</td>'+
-                                                  '</tr>');
+                '<td class="pt-1 border-top-0">' +
+                '<input type="text" class="form-control m-0" name="name[]" placeholder="">' +
+                '</td>' +
+                '<td class="pt-1 border-top-0">' +
+                '<select class="custom-select" id="inlineFormCustomSelect" name="units_measurement[]">'+
+                '<option >Шт.</option>'+
+                '<option >м.</option>' +
+                '<option >см.</option>' +
+                '<option >км.</option>' +
+                '<option >гр.</option>' +
+                '<option >кг.</option>' +
+                '<option >т.</option>' +
+                '<option >мл.</option>' +
+                '<option >л.</option>' +
+                '</select>' +
+                '</td>' +
+                '<td class="pt-1 border-top-0">'+
+                '<input type="number" class="form-control" placeholder="" name="count[]">' +
+                '</td>'+
+                '</tr>');
         };
     </script>
 @endsection

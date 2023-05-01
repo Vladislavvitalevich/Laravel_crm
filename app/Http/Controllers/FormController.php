@@ -25,7 +25,7 @@ class FormController extends Controller
      */
     public function create()
     {
-        //
+        return view('forms.create');
     }
 
     /**
@@ -60,10 +60,8 @@ class FormController extends Controller
 
 
         } catch(\Exception $e) {
-            echo 'Message: ' .$e->getMessage();
+            return view('forms.error', ['error' => $e->getMessage()]);
         }
-
-
 
     }
 
@@ -110,5 +108,12 @@ class FormController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function search(Request $request)
+    {
+        $result = Need::where("$request->for_what", "$request->search")->get();
+
+        return view('forms.index', ['needs' => $result]);
     }
 }

@@ -22,5 +22,5 @@ class RoleMiddleware
             abort(404);
         }
         return $next($request);
-    }   }
+    }
 }

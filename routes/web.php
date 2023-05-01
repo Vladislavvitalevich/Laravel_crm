@@ -7,11 +7,9 @@ Route::get('/', function () {
 });
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/form/first', function () {
-    return view('forms.form1');
-})->name('form1');
 
 Route::resource('form','FormController');
+Route::post('/form/search', 'FormController@search')->name('form.search');
 
 Auth::routes();
 

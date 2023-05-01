@@ -71,7 +71,8 @@
                         <a href="{{ url('/') }}">Home</a>
                         <a href="{{ url('/home') }}">Admin</a>
                     @else
-                        <a href="{{ route('form1') }}">Form</a>
+                        <a href="{{ route('form.index') }}">All applications</a>
+                        <a href="{{ route('form.create') }}">Form</a>
                         <a href="{{ route('login') }}">Login</a>
 
                         @if (Route::has('register'))
@@ -83,7 +84,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel User CRM
+                    Laravel  CRM
                 </div>
 
 <!--                <div class="links">
